@@ -894,3 +894,463 @@ img {
     }
 
 }
+/* =========================================
+   RESPONSIVE IMAGE SYSTEM
+========================================= */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* جلوگیری از بیرون‌زدگی تمام تصاویر */
+.about-image,
+.doctor-image,
+.article-card,
+.hero,
+.hero-card {
+    overflow: hidden;
+}
+
+/* تصاویر کارت‌ها */
+.service-card img,
+.article-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* عکس پزشک */
+.doctor-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* عکس About */
+.about-image img {
+    width: 100%;
+    height: 530px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: min(94%, 720px);
+    }
+
+    .about-image img {
+        height: 450px;
+    }
+
+    .doctor-image img {
+        height: 480px;
+        min-height: 0;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .article-card img {
+        height: 220px;
+        aspect-ratio: 16 / 10;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: calc(100% - 30px);
+        max-width: 100%;
+    }
+
+    /* عکس About */
+
+    .about-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 16px;
+    }
+
+    /* عکس پزشک */
+
+    .doctor-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .doctor-image img {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    /* عکس مقالات */
+
+    .article-card {
+        width: 100%;
+    }
+
+    .article-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: 760px;
+        background-position: center;
+    }
+
+    .hero-content {
+        width: calc(100% - 30px);
+    }
+
+    /* جلوگیری از خراب شدن متن روی عکس */
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(34px, 10vw, 44px);
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    /* کارت داخل Hero */
+
+    .hero-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* تجربه */
+
+    .experience {
+        right: 10px;
+        bottom: 10px;
+        padding: 14px 18px;
+    }
+
+    .experience strong {
+        font-size: 27px;
+    }
+
+    /* تصاویر و المان‌ها هرگز از صفحه بیرون نزنند */
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .hero {
+        min-height: 720px;
+    }
+
+    .hero-text h1 {
+        font-size: 34px;
+    }
+
+    .about-image img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .doctor-image img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .article-card img {
+        aspect-ratio: 4 / 3;
+    }
+
+}
+@media (max-width: 600px) {
+
+    .hero {
+        background-position: 65% center;
+        background-size: cover;
+    }
+
+}
+/* =========================================
+   SPECIALTY MENUS
+========================================= */
+
+.specialty-menus {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+
+/* کارت اصلی */
+
+.specialty-menu {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .06);
+    transition: .3s;
+}
+
+.specialty-menu:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .09);
+    border-color: #f0b1b9;
+}
+
+
+/* عنوان منو */
+
+.specialty-menu-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.specialty-menu-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    display: grid;
+    place-items: center;
+    background: #fff0f2;
+    color: var(--primary);
+    border-radius: 14px;
+    font-size: 24px;
+}
+
+.specialty-menu-title span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.specialty-menu-title h3 {
+    color: var(--navy);
+    font-size: 22px;
+    margin: 0;
+}
+
+
+/* لیست */
+
+.specialty-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.specialty-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 13px 4px;
+
+    color: var(--text);
+    font-size: 14px;
+
+    border-bottom: 1px solid var(--border);
+
+    transition: .3s;
+}
+
+.specialty-list a:last-child {
+    border-bottom: 0;
+}
+
+.specialty-list a:hover {
+    color: var(--primary);
+    padding-right: 10px;
+}
+
+.specialty-list a i {
+    color: var(--primary);
+    font-size: 11px;
+    transition: .3s;
+}
+
+.specialty-list a:hover i {
+    transform: translateX(-4px);
+}
+
+
+/* =========================================
+   SPECIALTY MENUS - TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .specialty-menus {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .specialty-menu {
+        padding: 22px;
+    }
+
+    .specialty-menu-title h3 {
+        font-size: 20px;
+    }
+
+    .specialty-list a {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================
+   SPECIALTY MENUS - MOBILE
+   دو منو همچنان کنار هم می‌مانند
+========================================= */
+
+@media (max-width: 600px) {
+
+    .specialty-menus {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 30px;
+    }
+
+    .specialty-menu {
+        padding: 15px 11px;
+        border-radius: 15px;
+    }
+
+    .specialty-menu-title {
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .specialty-menu-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .specialty-menu-title span {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .specialty-menu-title h3 {
+        font-size: 15px;
+    }
+
+    .specialty-list a {
+        padding: 9px 0;
+        font-size: 10px;
+        line-height: 1.7;
+        gap: 4px;
+    }
+
+    .specialty-list a i {
+        font-size: 8px;
+        flex-shrink: 0;
+    }
+
+    .specialty-list a:hover {
+        padding-right: 3px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .specialty-menus {
+        gap: 7px;
+    }
+
+    .specialty-menu {
+        padding: 12px 8px;
+        border-radius: 13px;
+    }
+
+    .specialty-menu-title {
+        gap: 6px;
+    }
+
+    .specialty-menu-icon {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        font-size: 14px;
+    }
+
+    .specialty-menu-title h3 {
+        font-size: 14px;
+    }
+
+    .specialty-list a {
+        font-size: 9px;
+        padding: 8px 0;
+    }
+
+}
