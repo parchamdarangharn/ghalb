@@ -12,7 +12,31 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=999">
+    <style>
+/* چیدمان کارت‌ها در موبایل */
+@media screen and (max-width: 600px) {
+
+    .services-grid,
+    .features-grid,
+    .articles-grid,
+    .specialty-menus {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .service-card,
+    .feature,
+    .article-card,
+    .specialty-menu {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+}
+</style>
 </head>
 
 <body>
